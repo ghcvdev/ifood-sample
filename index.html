@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FoodBox</title>
+
+    <style>
+      body {
+        background: lightgray;
+      }
+      .topo {
+        background: red;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      .produto {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+        cursor: pointer;
+        border: 5px solid white;
+      }
+
+      .botao {
+         background: green; 
+         text-align: center;
+         margin-top: 30px;
+         margin-bottom: 100px;
+         color: white;
+         padding: 15px;
+         border-radius: 50px;
+         cursor: pointer;
+         font-size: 18px;
+         font-weight: bold;
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      h3 {
+        font-size: 30px;
+        margin-bottom: 5px;
+      }
+
+      h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 20px;
+      }
+
+      img {
+        width: 130px;
+        border-radius: 5px;
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="topo">
+      <h1>FoodBox</h1>
+      <h2>Monte seu box e receba em 15 minutos!</h2>
+    </div>
+
+    <h3>Primeiro, seu prato</h3>
+
+    
+    <div id="frango" class="produto" onclick="escolherFrango()">
+      <img
+        src="images/frango.webp"
+      />
+      <h4>Frango a la Broaster</h4>
+      <p>Frango frito, com arroz e bata frita</p>
+      <p><strong>R$ 19,90</strong></p>
+    </div>
+
+
+    <div id="hamburguer" class="produto" onclick="escolherHamburguer()">
+      <img
+        src="images/hamburguer.jpg"
+      />
+      <h4>Hambúrguer do Chef</h4>
+      <p>Com carne artesanal, e tudo o que tiver direito!</p>
+      <p><strong>R$ 39,90</strong></p>
+    </div>
+
+
+    <div id="pizza" class="produto" onclick="escolherPizza()">
+      <img
+        src="images/pizza.jpg"
+      />
+      <h4>Pizza do Miguel</h4>
+      <p>A pizza preferida do Miguel</p>
+      <p><strong>R$ 89,90</strong></p>
+    </div>
+
+    <h3>Agora, sua bebida</h3>
+
+    <div id="coca" class="produto" onclick="escolherCoca()">
+        <img
+          src="images/coca.webp"
+        />
+        <h4>Coca-cola gelada</h4>
+        <p>Normal, light ou zero. Vai na sorte!</p>
+        <p><strong>R$ 5,90</strong></p>
+    </div>
+
+    <div id="suco" class="produto" onclick="escolherSuco()">
+        <img
+          src="images/suco.jpg"
+        />
+        <h4>Suco de Frutas</h4>
+        <p>A escolha da fruta depende da sua sorte!</p>
+        <p><strong>R$ 7,90</strong></p>
+    </div>
+
+    <h3>Finalmente, sua sobremesa</h3>
+
+    <div id="pudim" class="produto" onclick="escolherPudim()">
+        <img
+          src="images/pudim.jpg"
+        />
+        <h4>Pudim de Leite Condensado</h4>
+        <p>Precisa de descrição? CLARO QUE NÃO!</p>
+        <p><strong>R$ 19,90</strong></p>
+    </div>
+
+    <div id="quindim" class="produto" onclick="escolherQuindim()">
+        <img
+          src="images/quindim.jpg"
+        />
+        <h4>Quindim</h4>
+        <p>Fresquinho, como um delicioso quindim deve ser</p>
+        <p><strong>R$ 8,90</strong></p>
+    </div>
+
+    <div id="salada" class="produto" onclick="escolherSalada()">
+        <img
+          src="images/salada.webp"
+        />
+        <h4>Salada de Frutas</h4>
+        <p>Feito com frutas frescas da estação</p>
+        <p><strong>R$ 15,90</strong></p>
+    </div>
+
+    <div class="botao" onclick="finalizarPedido()">
+        Finalizar pedido
+
+    </div>
+
+
+
+    <script>
+        let lanche;
+        let bebida;
+        let sobremesa;
+
+      function escolherFrango() {
+        document.getElementById("frango").style.borderColor = "green";
+        document.getElementById("hamburguer").style.borderColor = "white"
+        document.getElementById("pizza").style.borderColor = "white"
+        lanche = "Frango";
+        
+      }
+
+      function escolherHamburguer() {
+        document.getElementById("frango").style.borderColor = "white";
+        document.getElementById("hamburguer").style.borderColor = "green"
+        document.getElementById("pizza").style.borderColor = "white"
+        lanche = "Hamburguer";
+      }
+
+      function escolherPizza() {
+        document.getElementById("frango").style.borderColor = "white";
+        document.getElementById("hamburguer").style.borderColor = "white"
+        document.getElementById("pizza").style.borderColor = "green"
+        lanche = "Pizza";
+      }
+
+      function escolherCoca() {
+        document.getElementById("coca").style.borderColor = "green";
+        document.getElementById("suco").style.borderColor = "white";
+        bebida = "Coca";
+      }
+
+      function escolherSuco() {
+        document.getElementById("suco").style.borderColor = "green";
+        document.getElementById("coca").style.borderColor = "white";
+        bebida = "Suco";
+      }
+
+      function escolherPudim() {
+        document.getElementById("pudim").style.borderColor = "green";
+        document.getElementById("quindim").style.borderColor = "white"
+        document.getElementById("salada").style.borderColor = "white"
+        sobremesa = "Pudim";
+      }
+
+      function escolherQuindim() {
+        document.getElementById("quindim").style.borderColor = "green";
+        document.getElementById("pudim").style.borderColor = "white"
+        document.getElementById("salada").style.borderColor = "white"
+        sobremesa = "Quindim";
+      }
+
+      function escolherSalada() {
+        document.getElementById("salada").style.borderColor = "green";
+        document.getElementById("pudim").style.borderColor = "white"
+        document.getElementById("quindim").style.borderColor = "white"
+        sobremesa = "Salada";
+      }
+
+      function finalizarPedido() {
+        let mensagem; 
+        mensagem = ('Olá, gostaria de pedir um combo: ' + lanche + ', ' + bebida + ' e ' + sobremesa + '.');
+        window.open("https://wa.me/+5524999999999?text=" + mensagem);
+      }
+    </script>
+  </body>
+</html>
